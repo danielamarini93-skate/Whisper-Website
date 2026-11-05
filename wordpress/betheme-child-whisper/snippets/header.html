@@ -1,0 +1,968 @@
+<!-- Whisper UI Kit · header
+     Custom header, if you build it as HTML instead of BeTheme’s header builder. Paste in a header template’s HTML element, full width. Needs whisper-kit.js for the dropdowns, "Get your Whisper" card and mobile drawer.
+     Paste into a BeBuilder HTML element (or a template). Requires whisper-kit.css (loaded by the child theme).
+     Images point to the child theme's assets/img folder; replace href="#" with real links. -->
+<div class="wh-page">
+<header class="wh-header">
+<div class="wh-header__util">
+<div class="wh-wrap wh-header__utilin">
+<a class="wh-header__promo" href="#">Meet us at WTM London, stand S6-312, 3–5 Nov</a>
+<div class="wh-header__utilr">
+<a class="wh-header__ulink" href="#">Contact</a>
+<a class="wh-header__ulink" href="#">Support</a>
+<div class="wh-lang" role="group" aria-label="Language">
+<button type="button" class="wh-lang__opt is-current" aria-pressed="true">EN</button>
+<button type="button" class="wh-lang__opt" aria-pressed="false">IT</button>
+</div>
+<button class="wh-iconbtn wh-iconbtn--soft" type="button" aria-label="Cart">
+<svg class="wh-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+</path>
+<circle cx="8" cy="21" r="1">
+</circle>
+<circle cx="19" cy="21" r="1">
+</circle>
+</svg>
+</button>
+<button class="wh-iconbtn wh-iconbtn--soft" type="button" aria-label="Account">
+<svg class="wh-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2">
+</path>
+<circle cx="12" cy="7" r="4">
+</circle>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<div class="wh-header__main">
+<div class="wh-wrap wh-header__mainin">
+<a class="wh-header__logo" href="/" aria-label="Whisper home">
+<img src="/wp-content/themes/betheme-child-whisper/assets/img/whisper-logo.svg" alt="Whisper" width="120" height="37">
+</a>
+<nav class="wh-header__nav" aria-label="Main">
+<ul class="wh-header__navlist">
+<li>
+<button type="button" class="wh-navlink wh-navlink--menu" aria-expanded="false" aria-controls="whh-mega-0">
+<span>Technology</span>
+<svg class="wh-icon wh-navlink__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+</li>
+<li>
+<button type="button" class="wh-navlink wh-navlink--menu" aria-expanded="false" aria-controls="whh-mega-1">
+<span>Solutions</span>
+<svg class="wh-icon wh-navlink__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+</li>
+<li>
+<a href="#" class="wh-navlink">Whisper Active</a>
+</li>
+<li>
+<button type="button" class="wh-navlink wh-navlink--menu" aria-expanded="false" aria-controls="whh-mega-3">
+<span>About</span>
+<svg class="wh-icon wh-navlink__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+</li>
+</ul>
+</nav>
+<div class="wh-header__cta">
+<button type="button" class="wh-btn wh-btn--primary wh-btn--sm wh-ctamenu__btn" aria-expanded="false" aria-controls="whh-cta">
+<span class="wh-btn__label">Get your Whisper</span>
+<svg class="wh-icon wh-ctamenu__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+<div class="wh-ctamenu" id="whh-cta" role="region" aria-label="Get your Whisper" hidden="">
+<p class="wh-ctamenu__title">How do you want it?</p>
+<ul class="wh-ctamenu__links">
+<li>
+<a class="wh-mega__link wh-ctamenu__link" href="/rent/">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-7)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-7" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M8 2v4">
+</path>
+<path d="M16 2v4">
+</path>
+<path d="M3 10h18">
+</path>
+<rect width="18" height="18" x="3" y="4" rx="2">
+</rect>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Rent</span>
+<span class="wh-mega__lx">From 1 day, delivered and collected</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link wh-ctamenu__link" href="/whisper-store/">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-9)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-9" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+</path>
+<circle cx="8" cy="21" r="1">
+</circle>
+<circle cx="19" cy="21" r="1">
+</circle>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Buy</span>
+<span class="wh-mega__lx">Own the system, 2-year warranty</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link wh-ctamenu__link" href="/contact/">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-11)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-11" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z">
+</path>
+<path d="M14 2v4a2 2 0 0 0 2 2h4">
+</path>
+<path d="M10 9H8">
+</path>
+<path d="M16 13H8">
+</path>
+<path d="M16 17H8">
+</path>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Request a quote</span>
+<span class="wh-mega__lx">Priced for your group size</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link wh-ctamenu__link" href="/contact/">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-13)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-13" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z">
+</path>
+<path d="M21 16v2a4 4 0 0 1-4 4h-5">
+</path>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Book a demo</span>
+<span class="wh-mega__lx">30 minutes, online</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+</ul>
+<div class="wh-ctamenu__foot">
+<span>Not sure what you need?</span>
+<a class="wh-link" href="/contact/">
+<span>Talk to us</span>
+<svg class="wh-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<div class="wh-header__mob">
+<button class="wh-iconbtn wh-iconbtn--soft" type="button" aria-label="Cart">
+<svg class="wh-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+</path>
+<circle cx="8" cy="21" r="1">
+</circle>
+<circle cx="19" cy="21" r="1">
+</circle>
+</svg>
+</button>
+<button class="wh-iconbtn wh-iconbtn--plain" type="button" aria-label="Open menu" aria-expanded="false">
+<svg class="wh-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M4 6h16">
+</path>
+<path d="M4 12h16">
+</path>
+<path d="M4 18h16">
+</path>
+</svg>
+</button>
+</div>
+</div>
+<div class="wh-mega" id="whh-mega-0" role="region" aria-label="Technology" hidden="">
+<div class="wh-wrap wh-mega__in">
+<div class="wh-mega__intro">
+<span class="wh-eyebrow">Technology</span>
+<p class="wh-mega__title">Radio guide systems for every format</p>
+<p class="wh-mega__text">One platform, three ways to deliver audio, all designed, tested and supported by us.</p>
+<a class="wh-link" href="/our-technology/">
+<span>All products</span>
+<svg class="wh-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</div>
+<ul class="wh-mega__links">
+<li>
+<a class="wh-mega__link" href="/our-technology/unidirectional-radioguides/">
+<span class="wh-mega__thumb" aria-hidden="true">
+<img src="/wp-content/themes/betheme-child-whisper/assets/img/whisper-x.webp" alt="">
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">One-way systems</span>
+<span class="wh-mega__lx">Whisper X, Y and the Transmitter</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="/our-technology/ai-translation-whisper-t/">
+<span class="wh-mega__thumb" aria-hidden="true">
+<img src="/wp-content/themes/betheme-child-whisper/assets/img/whisper-t.webp" alt="">
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">AI translation</span>
+<span class="wh-mega__lx">Whisper T, each listener in their language</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__thumb" aria-hidden="true">
+<img src="/wp-content/themes/betheme-child-whisper/assets/img/whisper-ws2.webp" alt="">
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Two-way systems</span>
+<span class="wh-mega__lx">WS2, hands-free and full-duplex</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__thumb" aria-hidden="true">
+<img src="/wp-content/themes/betheme-child-whisper/assets/img/audioguide-app.webp" alt="">
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Audio guides &amp; My Muse</span>
+<span class="wh-mega__lx">Self-guided, in 40+ languages</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+</ul>
+<a class="wh-mega__feature" href="#">
+<img class="wh-mega__fimg" src="/wp-content/themes/betheme-child-whisper/assets/img/hero-infinity.webp" alt="">
+<span class="wh-mega__fcopy">
+<span class="wh-badge wh-badge--on-dark">Infinity™</span>
+<span class="wh-mega__ftitle">One system, no limits</span>
+<span class="wh-btn wh-btn--sm wh-btn--outline-on-dark wh-mega__fcta">
+<span class="wh-btn__label">Discover Infinity</span>
+<svg class="wh-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</span>
+</span>
+</a>
+</div>
+</div>
+<div class="wh-mega" id="whh-mega-1" role="region" aria-label="Solutions" hidden="">
+<div class="wh-wrap wh-mega__in">
+<div class="wh-mega__intro">
+<span class="wh-eyebrow">Solutions</span>
+<p class="wh-mega__title">Find the right radio guide solution</p>
+<p class="wh-mega__text">Systems set up for the way your groups move.</p>
+<a class="wh-link" href="/solutions/">
+<span>All solutions</span>
+<svg class="wh-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</div>
+<ul class="wh-mega__links">
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-25)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-25" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+</path>
+<circle cx="12" cy="10" r="3">
+</circle>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Tourism</span>
+<span class="wh-mega__lx">Coach, walking and boat tours</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-27)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-27" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M3 22h18">
+</path>
+<path d="M6 18v-7">
+</path>
+<path d="M10 18v-7">
+</path>
+<path d="M14 18v-7">
+</path>
+<path d="M18 18v-7">
+</path>
+<path d="M12 2 20 7H4z">
+</path>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Museums</span>
+<span class="wh-mega__lx">Guided and self-guided visits</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-29)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-29" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z">
+</path>
+<path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2">
+</path>
+<path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2">
+</path>
+<path d="M10 6h4">
+</path>
+<path d="M10 10h4">
+</path>
+<path d="M10 14h4">
+</path>
+<path d="M10 18h4">
+</path>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Business &amp; events</span>
+<span class="wh-mega__lx">Conferences, factory tours, MICE</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-31)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-31" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+</path>
+<path d="M22 10v6">
+</path>
+<path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5">
+</path>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Education</span>
+<span class="wh-mega__lx">School trips and lectures</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+</ul>
+<a class="wh-mega__feature" href="#">
+<img class="wh-mega__fimg" src="/wp-content/themes/betheme-child-whisper/assets/img/museums.webp" alt="">
+<span class="wh-mega__fcopy">
+<span class="wh-badge wh-badge--on-dark">Museums</span>
+<span class="wh-mega__ftitle">Exclusive partner of the Vatican Museums since 2021</span>
+<span class="wh-btn wh-btn--sm wh-btn--outline-on-dark wh-mega__fcta">
+<span class="wh-btn__label">Read the story</span>
+<svg class="wh-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</span>
+</span>
+</a>
+</div>
+</div>
+<div class="wh-mega" id="whh-mega-3" role="region" aria-label="About" hidden="">
+<div class="wh-wrap wh-mega__in wh-mega__in--nofeature">
+<div class="wh-mega__intro">
+<span class="wh-eyebrow">About</span>
+<p class="wh-mega__title">We invented the radio guide in 1999</p>
+<p class="wh-mega__text">Designed and built by JustListen Technology in Malta.</p>
+<a class="wh-link" href="#">
+<span>About us</span>
+<svg class="wh-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</div>
+<ul class="wh-mega__links">
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-35)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-35" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2">
+</path>
+<path d="M6.453 15h11.094">
+</path>
+<path d="M8.5 2h7">
+</path>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Whisper Lab</span>
+<span class="wh-mega__lx">Our engineering team</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-37)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-37" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+</path>
+<path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12">
+</path>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Green Whisper</span>
+<span class="wh-mega__lx">Repair, reuse, recycle</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-39)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-39" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2">
+</path>
+<path d="M22 21v-2a4 4 0 0 0-3-3.87">
+</path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75">
+</path>
+<circle cx="9" cy="7" r="4">
+</circle>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Partnership</span>
+<span class="wh-mega__lx">Resellers and integrators</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-41)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-41" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M15 18h-5">
+</path>
+<path d="M18 14h-8">
+</path>
+<path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2">
+</path>
+<rect x="10" y="6" width="8" height="4" rx="1">
+</rect>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">News</span>
+<span class="wh-mega__lx">Launches and events</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-43)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-43" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+</path>
+<circle cx="12" cy="10" r="3">
+</circle>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Locations</span>
+<span class="wh-mega__lx">Offices in 17 countries</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+<li>
+<a class="wh-mega__link" href="#">
+<span class="wh-mega__icon" aria-hidden="true">
+<svg class="wh-icon wh-icon--grad" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="url(#wh-ig-header-45)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="wh-ig-header-45" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22">
+<stop offset="0" style="stop-color: var(--wh-grad-a);">
+</stop>
+<stop offset="1" style="stop-color: var(--wh-grad-b);">
+</stop>
+</linearGradient>
+</defs>
+<path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z">
+</path>
+<path d="M21 16v2a4 4 0 0 1-4 4h-5">
+</path>
+</svg>
+</span>
+<span class="wh-mega__lt">
+<span class="wh-mega__ll">Support</span>
+<span class="wh-mega__lx">Rentals, repairs and help</span>
+</span>
+<svg class="wh-icon wh-mega__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="wh-header__drawer" hidden="">
+<nav aria-label="Mobile">
+<div class="wh-drawer__group">
+<button type="button" class="wh-drawer__link wh-drawer__toggle" aria-expanded="false" aria-controls="whh-sub-0">
+<span>Technology</span>
+<svg class="wh-icon wh-drawer__chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+<div class="wh-drawer__sub" id="whh-sub-0" hidden="">
+<ul>
+<li>
+<a class="wh-drawer__sublink" href="/our-technology/unidirectional-radioguides/">
+<span class="wh-drawer__thumb" aria-hidden="true">
+<img src="/wp-content/themes/betheme-child-whisper/assets/img/whisper-x.webp" alt="">
+</span>
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">One-way systems</span>
+<span class="wh-drawer__sx">Whisper X, Y and the Transmitter</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink" href="/our-technology/ai-translation-whisper-t/">
+<span class="wh-drawer__thumb" aria-hidden="true">
+<img src="/wp-content/themes/betheme-child-whisper/assets/img/whisper-t.webp" alt="">
+</span>
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">AI translation</span>
+<span class="wh-drawer__sx">Whisper T, each listener in their language</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink" href="#">
+<span class="wh-drawer__thumb" aria-hidden="true">
+<img src="/wp-content/themes/betheme-child-whisper/assets/img/whisper-ws2.webp" alt="">
+</span>
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Two-way systems</span>
+<span class="wh-drawer__sx">WS2, hands-free and full-duplex</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink" href="#">
+<span class="wh-drawer__thumb" aria-hidden="true">
+<img src="/wp-content/themes/betheme-child-whisper/assets/img/audioguide-app.webp" alt="">
+</span>
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Audio guides &amp; My Muse</span>
+<span class="wh-drawer__sx">Self-guided, in 40+ languages</span>
+</span>
+</a>
+</li>
+</ul>
+<a class="wh-link" href="/our-technology/">
+<span>All products</span>
+<svg class="wh-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</div>
+</div>
+<div class="wh-drawer__group">
+<button type="button" class="wh-drawer__link wh-drawer__toggle" aria-expanded="false" aria-controls="whh-sub-1">
+<span>Solutions</span>
+<svg class="wh-icon wh-drawer__chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+<div class="wh-drawer__sub" id="whh-sub-1" hidden="">
+<ul>
+<li>
+<a class="wh-drawer__sublink wh-drawer__sublink--text" href="#">
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Tourism</span>
+<span class="wh-drawer__sx">Coach, walking and boat tours</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink wh-drawer__sublink--text" href="#">
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Museums</span>
+<span class="wh-drawer__sx">Guided and self-guided visits</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink wh-drawer__sublink--text" href="#">
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Business &amp; events</span>
+<span class="wh-drawer__sx">Conferences, factory tours, MICE</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink wh-drawer__sublink--text" href="#">
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Education</span>
+<span class="wh-drawer__sx">School trips and lectures</span>
+</span>
+</a>
+</li>
+</ul>
+<a class="wh-link" href="/solutions/">
+<span>All solutions</span>
+<svg class="wh-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</div>
+</div>
+<a href="#" class="wh-drawer__link">
+<span>Whisper Active</span>
+<svg class="wh-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="m9 18 6-6-6-6">
+</path>
+</svg>
+</a>
+<div class="wh-drawer__group">
+<button type="button" class="wh-drawer__link wh-drawer__toggle" aria-expanded="false" aria-controls="whh-sub-3">
+<span>About</span>
+<svg class="wh-icon wh-drawer__chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="m6 9 6 6 6-6">
+</path>
+</svg>
+</button>
+<div class="wh-drawer__sub" id="whh-sub-3" hidden="">
+<ul>
+<li>
+<a class="wh-drawer__sublink wh-drawer__sublink--text" href="#">
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Whisper Lab</span>
+<span class="wh-drawer__sx">Our engineering team</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink wh-drawer__sublink--text" href="#">
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Green Whisper</span>
+<span class="wh-drawer__sx">Repair, reuse, recycle</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink wh-drawer__sublink--text" href="#">
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Partnership</span>
+<span class="wh-drawer__sx">Resellers and integrators</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink wh-drawer__sublink--text" href="#">
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">News</span>
+<span class="wh-drawer__sx">Launches and events</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink wh-drawer__sublink--text" href="#">
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Locations</span>
+<span class="wh-drawer__sx">Offices in 17 countries</span>
+</span>
+</a>
+</li>
+<li>
+<a class="wh-drawer__sublink wh-drawer__sublink--text" href="#">
+<span class="wh-drawer__st">
+<span class="wh-drawer__sl">Support</span>
+<span class="wh-drawer__sx">Rentals, repairs and help</span>
+</span>
+</a>
+</li>
+</ul>
+<a class="wh-link" href="#">
+<span>About us</span>
+<svg class="wh-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</div>
+</div>
+</nav>
+<div class="wh-drawer__foot">
+<div class="wh-lang" role="group" aria-label="Language">
+<button type="button" class="wh-lang__opt is-current" aria-pressed="true">EN</button>
+<button type="button" class="wh-lang__opt" aria-pressed="false">IT</button>
+</div>
+<a class="wh-header__ulink" href="#">Contact</a>
+<a class="wh-header__ulink" href="#">Support</a>
+</div>
+<a class="wh-btn wh-btn--primary wh-btn--md wh-btn--full" href="/contact/">
+<span class="wh-btn__label">Get your Whisper</span>
+<svg class="wh-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+<path d="M5 12h14">
+</path>
+<path d="m12 5 7 7-7 7">
+</path>
+</svg>
+</a>
+</div>
+</header>
+</div>

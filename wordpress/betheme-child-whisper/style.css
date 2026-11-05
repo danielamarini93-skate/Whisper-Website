@@ -1,0 +1,11 @@
+/*
+Theme Name:   Whisper (BeTheme child)
+Theme URI:    https://whisper-system.net/
+Description:  BeTheme child theme that loads the Whisper UI Kit: design tokens, component styles, a BeTheme adapter and a small script for menus and accordions. No React.
+Author:       JustListen Technology Ltd
+Template:     betheme
+Version:      1.0.0
+Text Domain:  betheme-child-whisper
+*/
+
+/* Styles live in assets/css (whisper-kit.css, betheme-adapter.css) and are loaded from functions.php. */

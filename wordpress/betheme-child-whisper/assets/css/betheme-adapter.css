@@ -1,0 +1,288 @@
+/*! Whisper UI Kit — BeTheme adapter.
+ * Styles BeTheme / BeBuilder markup with the kit tokens (load after whisper-kit.css).
+ * Opt-in: add the class in BeBuilder › element › Advanced › "Custom CSS class" (it lands on .column / .wrap / .section),
+ * or in Appearance › Menus › CSS Classes for menu items. Everything is scoped under #Wrapper (or BeTheme's side menu)
+ * so it wins over BeBuilder's per-element styles without !important.
+ * Breakpoints follow the kit: mobile ≤ 767px, tablet ≤ 1023px. */
+
+/* ===================================================================== 0. Base */
+body.theme-betheme { font-family: var(--font-sans); color: var(--body); -webkit-font-smoothing: antialiased; }
+body.theme-betheme #Wrapper ::selection { background: var(--teal-soft); color: var(--ink); }
+/* One focus ring everywhere (BeTheme ships none) */
+body.theme-betheme #Wrapper a:focus-visible, body.theme-betheme #Wrapper button:focus-visible, body.theme-betheme #Wrapper input:focus-visible, body.theme-betheme #Wrapper select:focus-visible, body.theme-betheme #Wrapper textarea:focus-visible,
+body.theme-betheme #Wrapper [tabindex]:focus-visible { outline: 2px solid var(--wh-focus, var(--focus)); outline-offset: 3px; }
+body.theme-betheme #Wrapper .wb-dark, body.theme-betheme #Wrapper .wb-tile-dark, body.theme-betheme #Wrapper .wb-solution, #mfn-footer-template { --wh-focus: var(--focus-on-dark); }
+/* Highlight words: wrap them in <span class="wh-hl"> inside any Heading */
+body.theme-betheme #Wrapper .wb-dark, body.theme-betheme #Wrapper .wb-tile-dark, body.theme-betheme #Wrapper .wb-solution, body.theme-betheme #Wrapper .mfn-banner-box { --wh-grad-a: var(--grad-teal-dark-start); --wh-grad-b: var(--grad-teal-dark-end); }
+body.theme-betheme #Wrapper .wb-tile-light { --wh-grad-a: var(--grad-teal-tile-start); --wh-grad-b: var(--grad-teal-tile-end); }
+
+/* ===================================================================== 1. Buttons
+ * Shape and type for every BeTheme button; colour comes from a variant class on the Button element:
+ * wb-btn-primary · wb-btn-secondary · wb-btn-accent · wb-btn-on-dark · wb-btn-outline-on-dark · wb-btn-ghost
+ * Size: wb-btn-sm · Width: wb-btn-full */
+body.theme-betheme #Wrapper a.button, body.theme-betheme #Wrapper .button, body.theme-betheme #Wrapper button.button, body.theme-betheme #Wrapper input[type="submit"], body.theme-betheme #Wrapper .wpcf7-submit {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: 48px; padding: 0 var(--space-6); margin: 0; border-radius: var(--radius-pill); box-shadow: none;
+  font: 600 13px/16px var(--font-sans); letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease, background-position .3s ease, transform .12s ease;
+}
+body.theme-betheme #Wrapper .button .button_icon { order: 2; display: inline-flex; float: none; margin: 0; padding: 0; border: 0; background: none; transition: transform .18s ease; }
+body.theme-betheme #Wrapper .button .button_icon i { color: inherit; font-size: 15px; line-height: 1; margin: 0; }
+body.theme-betheme #Wrapper .button .button_label { order: 1; padding: 0; }
+body.theme-betheme #Wrapper .button:hover .button_icon { transform: translateX(3px); }
+body.theme-betheme #Wrapper .button:active { transform: translateY(1px); }
+/* BeTheme paints its hover fill on .button::before; kit variants own their colours */
+body.theme-betheme #Wrapper :is([class*="wb-btn-"] .button, .button[class*="wb-btn-"], .wb-link .button, .wb-solution .button, input[type="submit"], .wpcf7-submit)::before { content: none; display: none; }
+body.theme-betheme #Wrapper :is([class*="wb-btn-"] .button, .button[class*="wb-btn-"]) i, body.theme-betheme #Wrapper :is([class*="wb-btn-"] .button, .button[class*="wb-btn-"]):hover i { color: inherit; }
+body.theme-betheme #Wrapper :is(.wb-btn-sm .button, .button.wb-btn-sm) { min-height: 40px; padding: 0 18px; font-size: 12px; }
+body.theme-betheme #Wrapper :is(.wb-btn-full .button, .button.wb-btn-full) { display: flex; width: 100%; }
+
+body.theme-betheme #Wrapper :is(.wb-btn-primary .button, .button.wb-btn-primary), body.theme-betheme #Wrapper input[type="submit"], body.theme-betheme #Wrapper .wpcf7-submit, body.theme-betheme #Wrapper .woocommerce .button.alt {
+  color: var(--on-btn); border: 1.5px solid transparent; background-color: var(--grad-btn-end);
+  background-image: linear-gradient(180deg, var(--grad-btn-start) 0%, var(--grad-btn-end) 50%, var(--btn-hover) 100%);
+  background-size: 100% 200%; background-position: 0 0;
+}
+body.theme-betheme #Wrapper :is(.wb-btn-primary .button, .button.wb-btn-primary):hover, body.theme-betheme #Wrapper input[type="submit"]:hover, body.theme-betheme #Wrapper .wpcf7-submit:hover, body.theme-betheme #Wrapper .woocommerce .button.alt:hover {
+  color: var(--on-btn); background-color: var(--btn-hover); background-position: 0 100%;
+}
+body.theme-betheme #Wrapper :is(.wb-btn-secondary .button, .button.wb-btn-secondary) { color: var(--ink); background: transparent; border: 1.5px solid var(--btn); }
+body.theme-betheme #Wrapper :is(.wb-btn-secondary .button, .button.wb-btn-secondary):hover { color: var(--on-btn); border-color: var(--grad-btn-end); background-image: linear-gradient(180deg, var(--grad-btn-start) 0%, var(--grad-btn-end) 100%); }
+body.theme-betheme #Wrapper :is(.wb-btn-accent .button, .button.wb-btn-accent) { color: var(--on-teal); background: var(--teal); border: 1.5px solid transparent; }
+body.theme-betheme #Wrapper :is(.wb-btn-accent .button, .button.wb-btn-accent):hover { color: var(--on-teal); background: var(--teal-hover); }
+body.theme-betheme #Wrapper :is(.wb-btn-on-dark .button, .button.wb-btn-on-dark) { color: var(--ink-fixed); background: var(--on-dark); border: 1.5px solid transparent; }
+body.theme-betheme #Wrapper :is(.wb-btn-on-dark .button, .button.wb-btn-on-dark):hover { color: var(--ink-fixed); background: var(--tile-light-bottom); }
+body.theme-betheme #Wrapper :is(.wb-btn-outline-on-dark .button, .button.wb-btn-outline-on-dark) { color: var(--on-dark); background: transparent; border: 1.5px solid var(--outline-on-dark); }
+body.theme-betheme #Wrapper :is(.wb-btn-outline-on-dark .button, .button.wb-btn-outline-on-dark):hover { color: var(--ink-fixed); background: var(--on-dark); border-color: var(--on-dark); }
+body.theme-betheme #Wrapper :is(.wb-btn-ghost .button, .button.wb-btn-ghost) { color: var(--ink); background: transparent; border: 0; padding: 0 var(--space-4); }
+body.theme-betheme #Wrapper :is(.wb-btn-ghost .button, .button.wb-btn-ghost):hover { background: var(--bg-alt); }
+body.theme-betheme #Wrapper :is(.wb-btn-on-dark, .wb-btn-outline-on-dark) .button { --wh-focus: var(--focus-on-dark); }
+
+/* Text link with arrow: class wb-link on a Button element */
+body.theme-betheme #Wrapper :is(.wb-link .button, .button.wb-link) { min-height: 0; padding: 6px 0; border: 0; border-bottom: 1.5px solid currentColor; border-radius: 0; background: none; color: var(--ink); }
+body.theme-betheme #Wrapper :is(.wb-link .button, .button.wb-link):hover { color: var(--teal-text); background: none; }
+
+/* ===================================================================== 2. Type
+ * Heading element classes: wb-display (H1) · wb-h2 · wb-h3 · wb-h4 · wb-eyebrow · wb-ink (grey-black gradient)
+ * Column / Plain text classes: wb-lead · wb-body · wb-small · wb-caption · wb-muted */
+body.theme-betheme #Wrapper :is(.wb-display, .wb-h2, .wb-h3, .wb-h4, .wb-eyebrow) :is(.title, h1, h2, h3, h4, h5, h6) { font-family: var(--font-sans); color: var(--ink); margin: 0; text-wrap: balance; }
+body.theme-betheme #Wrapper .wb-display :is(.title, h1, h2, h3) { font-size: 60px; line-height: 62px; font-weight: 400; letter-spacing: -0.03em; }
+body.theme-betheme #Wrapper .wb-h2 :is(.title, h1, h2, h3) { font-size: 32px; line-height: 36px; font-weight: 300; letter-spacing: -0.02em; }
+body.theme-betheme #Wrapper .wb-h2 :is(.title, h2, h3) :is(b, strong) { font-weight: 600; }
+body.theme-betheme #Wrapper .wb-h3 :is(.title, h2, h3, h4) { font-size: 28px; line-height: 31px; font-weight: 300; letter-spacing: -0.02em; }
+body.theme-betheme #Wrapper .wb-h4 :is(.title, h3, h4, h5) { font-size: 22px; line-height: 26px; font-weight: 400; letter-spacing: -0.02em; }
+body.theme-betheme #Wrapper .wb-eyebrow :is(.title, h4, h5, h6, p) { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+body.theme-betheme #Wrapper :is(.wb-dark, .wb-tile-dark) :is(.wb-display, .wb-h2, .wb-h3, .wb-h4) :is(.title, h1, h2, h3, h4) { color: var(--on-dark); }
+body.theme-betheme #Wrapper :is(.wb-dark, .wb-tile-dark) .wb-eyebrow :is(.title, h4, h5, h6, p) { color: var(--on-dark-muted); }
+body.theme-betheme #Wrapper .wb-tile-light :is(.wb-h2, .wb-h3, .wb-h4) :is(.title, h2, h3, h4) { color: var(--ink-fixed); }
+body.theme-betheme #Wrapper .wb-lead, body.theme-betheme #Wrapper .wb-lead p { font-size: 19px; line-height: 28px; color: var(--body); }
+body.theme-betheme #Wrapper .wb-body, body.theme-betheme #Wrapper .wb-body p { font-size: 16px; line-height: 24px; color: var(--body); }
+body.theme-betheme #Wrapper .wb-small, body.theme-betheme #Wrapper .wb-small p { font-size: 14px; line-height: 20px; color: var(--muted); }
+body.theme-betheme #Wrapper .wb-caption, body.theme-betheme #Wrapper .wb-caption p { font-size: 13px; line-height: 18px; color: var(--muted); }
+body.theme-betheme #Wrapper .wb-muted, body.theme-betheme #Wrapper .wb-muted p { color: var(--muted); }
+body.theme-betheme #Wrapper :is(.wb-dark, .wb-tile-dark) :is(.wb-lead, .wb-body, .wb-lead p, .wb-body p) { color: var(--on-dark-body); }
+body.theme-betheme #Wrapper :is(.wb-dark, .wb-tile-dark) :is(.wb-small, .wb-caption, .wb-muted, .wb-small p, .wb-caption p) { color: var(--on-dark-muted); }
+body.theme-betheme #Wrapper .wb-tile-light :is(.wb-body, .wb-small, .wb-body p, .wb-small p) { color: var(--muted-fixed); }
+
+body.theme-betheme #Wrapper .wh-hl { color: var(--wh-grad-a); font-weight: 500; }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  body.theme-betheme #Wrapper .wh-hl { background-image: linear-gradient(90deg, var(--wh-grad-a), var(--wh-grad-b)); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  body.theme-betheme #Wrapper .wb-ink :is(.title, h1, h2, h3, h4) { background-image: linear-gradient(90deg, var(--grad-ink-start), var(--grad-ink-end)); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+}
+@media (max-width: 767px) {
+  body.theme-betheme #Wrapper .wb-display :is(.title, h1, h2, h3) { font-size: 34px; line-height: 36px; }
+  body.theme-betheme #Wrapper .wb-h2 :is(.title, h1, h2, h3) { font-size: 26px; line-height: 30px; }
+  body.theme-betheme #Wrapper .wb-h3 :is(.title, h2, h3, h4) { font-size: 24px; line-height: 27px; }
+  body.theme-betheme #Wrapper .wb-h4 :is(.title, h3, h4, h5) { font-size: 20px; line-height: 24px; }
+  body.theme-betheme #Wrapper .wb-lead, body.theme-betheme #Wrapper .wb-lead p { font-size: 17px; line-height: 26px; }
+}
+
+/* ===================================================================== 3. Sections and tiles
+ * Section: wb-section (96 / 64 / 48px padding) · wb-bg-alt · wb-dark (grey-black gradient, white text)
+ * Wrap: wb-tile-dark · wb-tile-light (product tiles) · wb-card (white card with border) · add wb-hover for the hover lift */
+body.theme-betheme #Wrapper .mcb-section.wb-section { padding-top: var(--space-24); padding-bottom: var(--space-24); }
+body.theme-betheme #Wrapper .mcb-section.wb-bg-alt { background-color: var(--bg-alt); }
+body.theme-betheme #Wrapper .wb-dark { color: var(--on-dark-body); background-color: var(--surface-dark);
+  background-image: radial-gradient(120% 90% at 0% 0%, rgba(255, 255, 255, .07) 0%, rgba(255, 255, 255, 0) 55%), linear-gradient(160deg, var(--grad-surface-start) 0%, var(--grad-surface-end) 100%); }
+body.theme-betheme #Wrapper .mcb-wrap.wb-tile-dark > .mcb-wrap-inner, body.theme-betheme #Wrapper .mcb-wrap.wb-tile-light > .mcb-wrap-inner, body.theme-betheme #Wrapper .mcb-wrap.wb-card > .mcb-wrap-inner {
+  position: relative; overflow: hidden; border-radius: var(--radius-lg); padding: var(--space-8); transition: box-shadow .25s ease, transform .25s ease; }
+body.theme-betheme #Wrapper .mcb-wrap.wb-tile-dark > .mcb-wrap-inner { color: var(--on-dark-body);
+  background-image: radial-gradient(120% 90% at 0% 0%, rgba(255, 255, 255, .07) 0%, rgba(255, 255, 255, 0) 55%), linear-gradient(160deg, var(--grad-surface-start) 0%, var(--grad-surface-end) 100%); }
+body.theme-betheme #Wrapper .mcb-wrap.wb-tile-light > .mcb-wrap-inner { color: var(--muted-fixed); background-image: linear-gradient(180deg, var(--tile-light-top) 0%, var(--tile-light-bottom) 100%); }
+body.theme-betheme #Wrapper .mcb-wrap.wb-tile-light .image_wrapper img { filter: drop-shadow(var(--shadow-product)); }
+body.theme-betheme #Wrapper .mcb-wrap.wb-card > .mcb-wrap-inner { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-6); }
+body.theme-betheme #Wrapper .mcb-wrap.wb-hover:hover > .mcb-wrap-inner { box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+body.theme-betheme #Wrapper .mcb-wrap.wb-hover:hover .image_wrapper img { transform: scale(1.04); }
+body.theme-betheme #Wrapper .mcb-wrap.wb-hover .image_wrapper img { transition: transform .5s ease; }
+@media (max-width: 1023px) { body.theme-betheme #Wrapper .mcb-section.wb-section { padding-top: var(--space-16); padding-bottom: var(--space-16); } }
+@media (max-width: 767px) {
+  body.theme-betheme #Wrapper .mcb-section.wb-section { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+  body.theme-betheme #Wrapper .mcb-wrap.wb-tile-dark > .mcb-wrap-inner, body.theme-betheme #Wrapper .mcb-wrap.wb-tile-light > .mcb-wrap-inner { padding: var(--space-6); }
+}
+
+/* ===================================================================== 4. Counter → stat (class wb-stat on each Counter, or wb-stats on the wrap/section)
+ * Set the Counter columns to 1/4 on desktop and 1/2 on mobile in BeBuilder for the kit's 2 × 2 mobile grid. */
+body.theme-betheme #Wrapper :is(.wb-stat, .wb-stats .column_counter) .counter { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-3); padding-left: var(--space-4); border-left: 1px solid var(--line); text-align: left; background: none; }
+body.theme-betheme #Wrapper :is(.wb-stat, .wb-stats .column_counter) .number-wrapper { font: 400 46px/46px var(--font-sans); letter-spacing: -0.03em; color: var(--ink); font-variant-numeric: tabular-nums; margin: 0; }
+body.theme-betheme #Wrapper :is(.wb-stat, .wb-stats .column_counter) .number-wrapper :is(.number, .label) { font: inherit; letter-spacing: inherit; color: inherit; }
+body.theme-betheme #Wrapper :is(.wb-stat, .wb-stats .column_counter) .title { margin: 0; max-width: 22ch; font: 400 13px/18px var(--font-sans); color: var(--muted); text-transform: none; letter-spacing: 0; }
+body.theme-betheme #Wrapper :is(.wb-stat, .wb-stats .column_counter) .icon_wrapper { display: none; }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  body.theme-betheme #Wrapper :is(.wb-stat, .wb-stats .column_counter) .number-wrapper { background-image: linear-gradient(90deg, var(--grad-ink-start), var(--grad-ink-end)); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+}
+@media (max-width: 767px) { body.theme-betheme #Wrapper :is(.wb-stat, .wb-stats .column_counter) .number-wrapper { font-size: 32px; line-height: 34px; } body.theme-betheme #Wrapper :is(.wb-stat, .wb-stats .column_counter) .counter { gap: var(--space-2); padding-left: var(--space-3); } }
+
+/* ===================================================================== 5. Icon Box 2 → feature card, menu link, option row
+ * wb-feature: bordered card · wb-menu-link: mega-menu row (icon or image, title, one line) · wb-menu-option: "Get your Whisper" row
+ * Icons are BeTheme icon-font glyphs; the kit draws them in the teal gradient on a grey square. */
+body.theme-betheme #Wrapper :is(.wb-feature, .wb-menu-link, .wb-menu-option) .mfn-icon-box { display: flex; text-align: left; transform: none !important; }
+body.theme-betheme #Wrapper :is(.wb-feature, .wb-menu-link, .wb-menu-option) .icon-wrapper { display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0; background: var(--bg-alt); border: 0; box-shadow: none; overflow: hidden; }
+body.theme-betheme #Wrapper :is(.wb-feature, .wb-menu-link, .wb-menu-option) .icon-wrapper i { font-size: 22px; line-height: 1; color: var(--grad-teal-start); }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  body.theme-betheme #Wrapper :is(.wb-feature, .wb-menu-link, .wb-menu-option) .icon-wrapper i { background-image: linear-gradient(135deg, var(--grad-teal-start), var(--grad-teal-end)); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+}
+body.theme-betheme #Wrapper :is(.wb-feature, .wb-menu-link, .wb-menu-option) .icon-wrapper img { display: block; max-width: 78%; max-height: 86%; object-fit: contain; }
+body.theme-betheme #Wrapper :is(.wb-feature, .wb-menu-link, .wb-menu-option) .desc-wrapper { padding: 0; }
+body.theme-betheme #Wrapper :is(.wb-feature, .wb-menu-link, .wb-menu-option) .title { margin: 0; font-family: var(--font-sans); color: var(--ink); text-transform: none; letter-spacing: 0; }
+body.theme-betheme #Wrapper :is(.wb-feature, .wb-menu-link, .wb-menu-option) .desc { margin: 0; color: var(--muted); }
+
+body.theme-betheme #Wrapper .wb-feature .mfn-icon-box { flex-direction: column; align-items: flex-start; gap: var(--space-3); height: 100%; padding: var(--space-6); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease; }
+body.theme-betheme #Wrapper .wb-feature .icon-wrapper { width: 48px; height: 48px; border-radius: var(--radius-pill); margin-bottom: var(--space-2); }
+body.theme-betheme #Wrapper .wb-feature .title { font-size: 22px; line-height: 26px; font-weight: 400; letter-spacing: -0.02em; }
+body.theme-betheme #Wrapper .wb-feature .desc { font-size: 14px; line-height: 20px; }
+body.theme-betheme #Wrapper .wb-feature a:hover .mfn-icon-box, body.theme-betheme #Wrapper .wb-feature .mfn-icon-box:hover { border-color: var(--line-strong); box-shadow: var(--shadow-card-hover); transform: translateY(-2px) !important; }
+
+body.theme-betheme #Wrapper :is(.wb-menu-link, .wb-menu-option) .mfn-icon-box { flex-direction: row; align-items: center; gap: var(--space-4); padding: var(--space-3); border-radius: var(--radius-md); }
+body.theme-betheme #Wrapper .wb-menu-link .icon-wrapper { width: 56px; height: 56px; border-radius: var(--radius-sm); }
+body.theme-betheme #Wrapper .wb-menu-link .icon-wrapper:has(img) { background-image: linear-gradient(180deg, var(--tile-light-top), var(--tile-light-bottom)); }
+body.theme-betheme #Wrapper .wb-menu-option .icon-wrapper { width: 44px; height: 44px; border-radius: var(--radius-sm); }
+body.theme-betheme #Wrapper :is(.wb-menu-link, .wb-menu-option) .title { font-size: 16px; line-height: 22px; font-weight: 600; transition: color .15s ease; }
+body.theme-betheme #Wrapper :is(.wb-menu-link, .wb-menu-option) .desc { font-size: 14px; line-height: 20px; }
+body.theme-betheme #Wrapper :is(.wb-menu-link, .wb-menu-option) a:hover .title, body.theme-betheme #Wrapper :is(.wb-menu-link, .wb-menu-option) a:focus-visible .title { color: var(--teal-text); }
+
+/* ===================================================================== 6. Banner Box → solution card (class wb-solution)
+ * Fill the Banner Box title (market name), description (one line, up to ~9 words) and button label ("Explore"). */
+body.theme-betheme #Wrapper .wb-solution .mfn-banner-box { position: relative; display: block; overflow: hidden; isolation: isolate; border-radius: var(--radius-md); width: 100%; min-width: 0; aspect-ratio: 4 / 3; min-height: 250px; height: auto; background: var(--surface-dark); color: var(--on-dark); text-decoration: none; }
+body.theme-betheme #Wrapper .wb-solution .banner-image, body.theme-betheme #Wrapper .wb-solution .banner-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+body.theme-betheme #Wrapper .wb-solution .banner-image { z-index: -2; }
+body.theme-betheme #Wrapper .wb-solution .banner-image img { filter: grayscale(1) contrast(1.05); transition: transform .5s ease, filter .4s ease; }
+body.theme-betheme #Wrapper .wb-solution .mfn-banner-box::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0, 0, 0, .72) 0%, rgba(0, 0, 0, .15) 55%, rgba(0, 0, 0, .55) 100%); }
+body.theme-betheme #Wrapper .wb-solution .mfn-banner-box::after { display: none; }
+body.theme-betheme #Wrapper .wb-solution .banner-desc { position: absolute; inset: 0; display: flex; margin: 0; padding: var(--space-6); background: none !important; transform: none; }
+body.theme-betheme #Wrapper .wb-solution .banner-wrapper { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; width: 100%; height: 100%; text-align: left; }
+body.theme-betheme #Wrapper .wb-solution .banner-wrapper .title { margin: 0; font: 400 22px/26px var(--font-sans); letter-spacing: -0.02em; color: var(--on-dark); }
+body.theme-betheme #Wrapper .wb-solution .banner-wrapper :is(.desc, .subtitle, p:not(.title)) { margin: 0; max-width: 34ch; font: 400 14px/20px var(--font-sans); color: var(--on-dark-body); }
+body.theme-betheme #Wrapper .wb-solution .banner-wrapper :is(.button, .banner-cta, .banner-button) { margin-top: auto; min-height: 34px; padding: 0 14px; font-size: 12px; color: var(--on-dark); background: transparent; border: 1.5px solid var(--outline-on-dark); transform: none; opacity: 1; }
+body.theme-betheme #Wrapper .wb-solution .mfn-banner-box:hover .banner-image img { transform: scale(1.04); filter: grayscale(.6) contrast(1.05); }
+body.theme-betheme #Wrapper .wb-solution .mfn-banner-box:is(:hover, :focus-visible) .banner-wrapper :is(.button, .banner-cta, .banner-button) { background: var(--on-dark); border-color: var(--on-dark); color: var(--ink-fixed); }
+
+/* ===================================================================== 7. Header template
+ * Section classes: wb-utilbar (grey top bar) · wb-mainbar (white bar with a hairline). Promo: class wb-promo on a Heading/Plain text.
+ * Menu item classes (Appearance › Menus › CSS Classes): wb-menu-cta on the "Get your Whisper" item. */
+body.theme-betheme #Wrapper .mcb-section.wb-utilbar { background: var(--bg-alt); border-bottom: 1px solid var(--line); }
+body.theme-betheme #Wrapper .mcb-section.wb-utilbar :is(a, p, span) { font-size: 13px; line-height: 18px; }
+body.theme-betheme #Wrapper .mcb-section.wb-mainbar { background: var(--bg); border-bottom: 1px solid var(--line); }
+body.theme-betheme #Wrapper .wb-promo :is(.title, p) { display: inline-flex; align-items: center; gap: 6px; font: 400 13px/18px var(--font-sans); color: var(--ink); text-transform: none; letter-spacing: 0; }
+body.theme-betheme #Wrapper .wb-promo :is(.title, p)::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+
+body.theme-betheme #Wrapper .mfn-header-menu > li > a.mfn-menu-link { position: relative; display: inline-flex; align-items: center; gap: 6px; min-height: var(--tap-min); padding: 0 14px; border-radius: var(--radius-pill); font: 500 15px/20px var(--font-sans); color: var(--body); text-transform: none; letter-spacing: 0; transition: background-color .15s, color .15s; }
+body.theme-betheme #Wrapper .mfn-header-menu > li:is(:hover, :focus-within, .wh-open) > a.mfn-menu-link { color: var(--ink); background: var(--bg-alt); }
+body.theme-betheme #Wrapper .mfn-header-menu > li:is(.current-menu-item, .current-menu-ancestor, .current_page_item) > a.mfn-menu-link { color: var(--ink); }
+body.theme-betheme #Wrapper .mfn-header-menu > li:is(.current-menu-item, .current-menu-ancestor, .current_page_item) > a.mfn-menu-link::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 6px; height: 2px; border-radius: 2px; background: var(--ink); }
+/* Swap BeTheme's arrow-down glyph for the kit chevron */
+body.theme-betheme #Wrapper .mfn-header-menu > li > a .menu-sub i, body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu .outer-menu-sub i, body.theme-betheme #Wrapper .mfn-megamenu-menu .menu-sub i { display: none; }
+body.theme-betheme #Wrapper .mfn-header-menu > li > a .menu-sub { display: inline-flex; width: 16px; height: 16px; align-items: center; justify-content: center; margin: 0; }
+body.theme-betheme #Wrapper .mfn-header-menu > li > a .menu-sub::before, body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu .outer-menu-sub::before {
+  content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s ease; }
+body.theme-betheme #Wrapper .mfn-header-menu > li:is(:hover, :focus-within, .wh-open) > a .menu-sub::before { transform: translateY(2px) rotate(-135deg); }
+
+/* Mega-menu panel: build its content in Mega Menu templates with wb-eyebrow / wb-h4 / wb-small / wb-link and wb-menu-link icon boxes */
+body.theme-betheme #Wrapper .mfn-header-menu .mfn-menu-item-megamenu { background: var(--bg); border-top: 1px solid var(--line); border-radius: 0 0 var(--radius-lg) var(--radius-lg); box-shadow: var(--shadow-drawer); }
+body.theme-betheme #Wrapper .mfn-megamenu-menu > li > a { display: flex; align-items: center; min-height: 44px; padding: 0 var(--space-3); border-radius: var(--radius-md); font: 600 16px/22px var(--font-sans); color: var(--ink); }
+body.theme-betheme #Wrapper .mfn-megamenu-menu > li > a:hover { color: var(--teal-text); }
+
+/* "Get your Whisper": menu item with class wb-menu-cta. whisper-kit.js makes it open on click (not hover). */
+body.theme-betheme #Wrapper .mfn-header-menu > li.wb-menu-cta { position: relative; }
+body.theme-betheme #Wrapper .mfn-header-menu > li.wb-menu-cta > a.mfn-menu-link { min-height: 40px; padding: 0 18px; color: var(--on-btn); font: 600 12px/16px var(--font-sans); letter-spacing: .07em; text-transform: uppercase;
+  background-color: var(--grad-btn-end); background-image: linear-gradient(180deg, var(--grad-btn-start) 0%, var(--grad-btn-end) 50%, var(--btn-hover) 100%); background-size: 100% 200%; background-position: 0 0; }
+body.theme-betheme #Wrapper .mfn-header-menu > li.wb-menu-cta:is(:hover, .wh-open) > a.mfn-menu-link { color: var(--on-btn); background-color: var(--btn-hover); background-position: 0 100%; }
+body.theme-betheme #Wrapper .mfn-header-menu > li.wb-menu-cta > a.mfn-menu-link::after { display: none; }
+body.theme-betheme #Wrapper .mfn-header-menu > li.wb-menu-cta > .mfn-menu-item-megamenu { left: auto !important; right: 0 !important; width: 380px !important; max-width: 90vw; margin-top: 16px; padding: var(--space-2); border: 1px solid var(--line); border-radius: var(--radius-lg); }
+html.wh-js body.theme-betheme #Wrapper .mfn-header-menu > li.wb-menu-cta:not(.wh-open) > .mfn-menu-item-megamenu { display: none !important; }
+html.wh-js body.theme-betheme #Wrapper .mfn-header-menu > li.wb-menu-cta.wh-open > .mfn-menu-item-megamenu { display: block !important; opacity: 1 !important; visibility: visible !important; }
+
+/* Language switch (WPML legacy horizontal list): EN / IT text segments, no flags */
+body.theme-betheme #Wrapper .wpml-ls-legacy-list-horizontal { padding: 0; border: 0; }
+body.theme-betheme #Wrapper .wpml-ls-legacy-list-horizontal > ul { display: inline-flex; gap: 2px; padding: 3px; border-radius: var(--radius-pill); background: var(--bg-alt); }
+body.theme-betheme #Wrapper .wpml-ls-legacy-list-horizontal .wpml-ls-item a { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; height: 28px; padding: 0 10px; border-radius: var(--radius-pill); font: 600 12px/28px var(--font-sans); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+body.theme-betheme #Wrapper .wpml-ls-legacy-list-horizontal .wpml-ls-item a:hover { color: var(--ink); }
+body.theme-betheme #Wrapper .wpml-ls-legacy-list-horizontal .wpml-ls-current-language a { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0, 0, 0, .08); }
+body.theme-betheme #Wrapper .wpml-ls-legacy-list-horizontal .wpml-ls-flag { display: none; }
+
+/* Burger and header icons: 44px targets */
+body.theme-betheme #Wrapper .mfn-header-menu-burger, body.theme-betheme #Wrapper .column_header_icon a { display: inline-flex; align-items: center; justify-content: center; min-width: var(--tap-min); min-height: var(--tap-min); border-radius: var(--radius-pill); }
+body.theme-betheme #Wrapper .mfn-header-menu-burger:hover, body.theme-betheme #Wrapper .column_header_icon a:hover { background: var(--bg-alt); }
+
+/* ===================================================================== 8. Mobile side menu (BeTheme sidemenu template)
+ * The side menu sits outside #Wrapper and BeBuilder styles it with long selectors, so this scope repeats its class to win. */
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu > li { border-bottom: 1px solid var(--line); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu > li > a.mfn-menu-link { display: flex; align-items: center; min-height: 56px; padding: 0 4px; font: 400 20px/24px var(--font-sans); letter-spacing: -0.01em; color: var(--ink); text-transform: none; }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu > li:is(.current-menu-item, .current-menu-ancestor) > a.mfn-menu-link { font-weight: 600; }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu .outer-menu-sub { display: inline-flex; align-items: center; justify-content: center; width: var(--tap-min); height: var(--tap-min); color: var(--muted); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu li:is(.wh-open, .mfn-menu-item-open, .submenu-active) > a.mfn-menu-link { font-weight: 600; }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu li:is(.wh-open, .mfn-menu-item-open, .submenu-active) > .outer-menu-sub { color: var(--ink); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu li:is(.wh-open, .mfn-menu-item-open, .submenu-active) > .outer-menu-sub::before { transform: translateY(2px) rotate(-135deg); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu .sub-menu { padding: 0 0 var(--space-4); border: 0; background: none; }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu .sub-menu > li > a.mfn-menu-link { display: flex; align-items: center; gap: var(--space-3); min-height: 52px; padding: 6px var(--space-3); border-radius: var(--radius-md); font: 500 16px/22px var(--font-sans); color: var(--ink); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu .sub-menu > li > a.mfn-menu-link:hover { background: var(--bg-alt); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu .sub-menu .outer-menu-sub { display: none; }
+/* Technology sub-items only: add one of these classes to the menu item to show the product picture */
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-menu .sub-menu li:is(.wb-thumb-oneway, .wb-thumb-t, .wb-thumb-ws2, .wb-thumb-app) > a.mfn-menu-link::before {
+  content: ""; flex-shrink: 0; width: 44px; height: 44px; border-radius: var(--radius-sm); background: var(--wh-thumb) center / 78% auto no-repeat, linear-gradient(180deg, var(--tile-light-top), var(--tile-light-bottom)); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .wb-thumb-oneway { --wh-thumb: url("../img/whisper-x.webp"); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .wb-thumb-t { --wh-thumb: url("../img/whisper-t.webp"); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .wb-thumb-ws2 { --wh-thumb: url("../img/whisper-ws2.webp"); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .wb-thumb-app { --wh-thumb: url("../img/audioguide-app.webp"); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-closebutton { display: inline-flex; align-items: center; justify-content: center; width: var(--tap-min); height: var(--tap-min); border-radius: var(--radius-pill); }
+body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl .mfn-sidemenu-closebutton:hover { background: var(--bg-alt); }
+
+/* ===================================================================== 9. Footer template (add class wb-footer to its section) */
+#mfn-footer-template .mcb-section.wb-footer { color: var(--on-dark-body); background-color: var(--surface-dark);
+  background-image: radial-gradient(90% 70% at 0% 0%, rgba(255, 255, 255, .06) 0%, rgba(255, 255, 255, 0) 60%), linear-gradient(180deg, #1c1c1c 0%, var(--surface-dark) 70%); }
+#mfn-footer-template .mfn-footer-menu li a { display: inline-block; padding: 6px 0; font: 400 14px/20px var(--font-sans); color: var(--on-dark-body); text-decoration: none; }
+#mfn-footer-template .mfn-footer-menu li a:hover { color: var(--teal-bright); text-decoration: underline; text-underline-offset: 3px; }
+#mfn-footer-template .wb-eyebrow :is(.title, h4, h5, h6, p) { color: var(--on-dark); }
+#mfn-footer-template .wb-legal, #mfn-footer-template .wb-legal :is(p, a) { font-size: 13px; line-height: 18px; color: var(--on-dark-muted); }
+#mfn-footer-template .wb-legal a { display: inline-block; padding: 6px 0; margin-right: var(--space-4); }
+#mfn-footer-template .wb-legal a[href^="mailto:"] { color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px; }
+#mfn-footer-template a:focus-visible { outline-color: var(--focus-on-dark); }
+#Wrapper #back_to_top, #back_to_top { display: inline-flex; align-items: center; justify-content: center; width: var(--tap-min); height: var(--tap-min); border-radius: var(--radius-pill); border: 1.5px solid var(--outline-on-dark); background: transparent; color: var(--on-dark); }
+#back_to_top:hover { background: var(--on-dark); color: var(--ink-fixed); }
+
+/* ===================================================================== 10. Contact Form 7 */
+body.theme-betheme #Wrapper .wpcf7-form label { display: block; font: 500 14px/20px var(--font-sans); color: var(--ink); }
+body.theme-betheme #Wrapper .wpcf7-form :is(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], input[type="url"], select, textarea).wpcf7-form-control {
+  width: 100%; min-height: 48px; margin-top: var(--space-2); padding: 12px var(--space-4); border-radius: var(--radius-sm); border: 1.5px solid var(--line-strong); background: var(--surface); color: var(--ink);
+  font: 400 16px/22px var(--font-sans); box-shadow: none; transition: border-color .15s, box-shadow .15s; }
+body.theme-betheme #Wrapper .wpcf7-form textarea.wpcf7-form-control { min-height: 120px; resize: vertical; }
+body.theme-betheme #Wrapper .wpcf7-form .wpcf7-form-control::placeholder { color: var(--muted); opacity: 1; }
+body.theme-betheme #Wrapper .wpcf7-form .wpcf7-form-control:hover { border-color: var(--ink); }
+body.theme-betheme #Wrapper .wpcf7-form .wpcf7-form-control:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 3px var(--teal-soft), 0 0 0 1px var(--focus) inset; }
+body.theme-betheme #Wrapper .wpcf7-form .wpcf7-not-valid { border-color: var(--danger); }
+body.theme-betheme #Wrapper .wpcf7-form .wpcf7-not-valid-tip { margin-top: 6px; font: 500 13px/18px var(--font-sans); color: var(--danger); }
+body.theme-betheme #Wrapper .wpcf7-form .wpcf7-list-item { margin: 0 var(--space-6) 0 0; }
+body.theme-betheme #Wrapper .wpcf7-form .wpcf7-list-item label { display: inline-flex; align-items: flex-start; gap: var(--space-3); min-height: var(--tap-min); padding: 10px 0; font-weight: 400; font-size: 15px; line-height: 22px; }
+body.theme-betheme #Wrapper .wpcf7-form .wpcf7-list-item input[type="checkbox"], body.theme-betheme #Wrapper .wpcf7-form .wpcf7-list-item input[type="radio"] { width: 22px; height: 22px; margin: 0; accent-color: var(--btn); flex-shrink: 0; }
+body.theme-betheme #Wrapper .wpcf7 form .wpcf7-response-output { margin: var(--space-4) 0 0; padding: var(--space-4); border: 0; border-radius: var(--radius-sm); background: var(--teal-soft); color: var(--ink); font: 400 14px/20px var(--font-sans); }
+body.theme-betheme #Wrapper .wpcf7 form.sent .wpcf7-response-output { background: var(--success-soft); }
+body.theme-betheme #Wrapper .wpcf7 form:is(.invalid, .failed, .aborted, .spam, .unaccepted) .wpcf7-response-output { background: var(--danger-soft); color: var(--danger); }
+
+/* ===================================================================== 11. Readabler accessibility button: smaller, on-brand, out of the content */
+.mdp-readabler-trigger-button-box { bottom: 16px !important; left: 16px !important; }
+body #mdp-readabler-trigger-button { width: var(--tap-min) !important; height: var(--tap-min) !important; }
+/* Its colour is set in the plugin: Readabler › Open Button › colours (use #2B2B2B background, white icon). */
+
+/* ===================================================================== 12. Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body.theme-betheme #Wrapper *, body.theme-betheme .mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl.mfn-sidemenu-tmpl * { transition-duration: 0s !important; animation-duration: 0s !important; }
+  body.theme-betheme #Wrapper .button:hover .button_icon, body.theme-betheme #Wrapper .mcb-wrap.wb-hover:hover > .mcb-wrap-inner, body.theme-betheme #Wrapper .wb-feature .mfn-icon-box:hover, body.theme-betheme #Wrapper .wb-solution .mfn-banner-box:hover .banner-image img { transform: none !important; }
+}
