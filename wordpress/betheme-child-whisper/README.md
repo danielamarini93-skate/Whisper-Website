@@ -1,6 +1,6 @@
 # Whisper UI Kit for WordPress + BeTheme
 
-A BeTheme child theme that puts the [Whisper UI Kit](https://claude.ai/artifact/NtwPqdoFv5wqadi8EXvPx1) on whisper-system.net. It uses plain CSS and about 9 KB of plain JavaScript (uncompressed, with comments). React is only used for the kit's previews, and you don't need it here.
+A BeTheme child theme that puts the [Whisper UI Kit](https://claude.ai/artifact/9Qg4axyQyZoYDvsheAM6wE) on whisper-system.net. It uses plain CSS and about 9 KB of plain JavaScript (uncompressed, with comments). React is only used for the kit's previews, and you don't need it here.
 
 ```
 betheme-child-whisper/
