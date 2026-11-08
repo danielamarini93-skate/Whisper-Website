@@ -33,6 +33,7 @@ Full detail: [`docs/PROJECT-BRIEF.md`](docs/PROJECT-BRIEF.md) and the UI Kit's b
 |---|---|
 | Project brief: navigation, homepage structure, open items | [`docs/PROJECT-BRIEF.md`](docs/PROJECT-BRIEF.md) |
 | Every design, study and audit (artifact links) | [`docs/artifacts.md`](docs/artifacts.md) |
+| Website copy, EN and IT (source) | [`docs/copy/`](docs/copy/) |
 | BeTheme child theme, snippets, demo | [`wordpress/betheme-child-whisper/`](wordpress/betheme-child-whisper/README.md) |
 | Process outputs | `docs/design-thinking/`, `docs/design-build/`, `docs/design-review/` (none yet) |
 
@@ -41,7 +42,7 @@ Full detail: [`docs/PROJECT-BRIEF.md`](docs/PROJECT-BRIEF.md) and the UI Kit's b
 - **Moved to a new Claude account:**
   - all 36 pages and the homepage audit, republished with links between pages repointed;
   - the UI Kit, rebuilt with its images re-uploaded.
-- **Not moved yet:** the EN and IT website copy documents. Dani still has to choose editable Docs or read-only pages.
+- **Website copy (EN and IT):** read-only pages, built from `docs/copy/*.md`. The Markdown is the version to edit; republish the pages after changes.
 - **Child theme:** written, but not yet installed or tested in WordPress. Use staging first.
 - **Open items** (copy to check, quote attribution, live-site fixes): see the brief.
 

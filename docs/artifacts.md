@@ -57,11 +57,11 @@ The AI Translation artboard is 9,380px tall, above the canvas's documented 8,000
 | 35 | Nav, two directions | https://claude.ai/artifact/7wL11tyk61LU5pFu8PVTbM |
 | 36 | Header CTA patterns | https://claude.ai/artifact/H5jMGF8oqUC3a4vNMCZbtp |
 
-## Not moved yet
+## Website copy (read-only pages)
 
-| # | Page | Status |
-|---|---|---|
-| 23 | Website copy, EN | Markdown only, in the export. To do: editable Doc or read-only page (Dani to decide) |
-| 24 | Website copy, IT | Same as 23 |
+| # | Page | Link | Source |
+|---|---|---|---|
+| 23 | Website copy, EN | https://claude.ai/artifact/96pzHmjDPrqH3i5eWLPRiX | [`copy/website-copy-en.md`](copy/website-copy-en.md) |
+| 24 | Website copy, IT | https://claude.ai/artifact/EgqyEQ51HCaTvnPSdjvLtp | [`copy/website-copy-it.md`](copy/website-copy-it.md) |
 
-The client summary (20) still links to the old addresses of these two documents. Repoint those links once the documents exist here.
+These were editable Docs on the old account. Here they are read-only pages built from the Markdown, which is the version to edit. Each page highlights every "[confirm: …]" fact flag (83 in EN, 85 in IT) and links to the other language. The client summary (20) now links to these pages.
