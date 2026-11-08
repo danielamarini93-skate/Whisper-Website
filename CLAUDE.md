@@ -7,7 +7,8 @@ How Dani works (process, principles, GitHub routine) lives in the `dani-studio` 
 - **JustListen Technology Ltd**, brand **Whisper**: wireless radio guide systems for tour guides, museums, events, education and sport (Whisper Active). "We invented the radio guide in 1999."
 - **Where they're based:** TBC. The brief says Malta (JustListen Technology Ltd, Malta), but site copy says "engineered in Italy". Confirm with the client.
 - **Live site:** [whisper-system.net](https://whisper-system.net/), on WordPress + **BeTheme** (BeBuilder, header, mega menu and side menu templates), WPML (EN/IT), Contact Form 7, the Readabler accessibility plugin and WooCommerce.
-- **What Dani does:** redesigns the website. Pages are designed as Claude artifacts, then built in BeTheme.
+- **What Dani does:** design only. Pages are designed as Claude artifacts, and Dani supplies the UI Kit and the BeTheme child theme.
+- **Who owns the site:** someone else (TBC: name and role) owns the live site and any staging copy, and does the WordPress work. Dani doesn't install, configure or test anything on the site. Hand-offs go to the site owner: the child theme zip, the UI Kit's **WordPress + BeTheme** section and a list of what to check.
 
 ## Design system
 
@@ -43,9 +44,9 @@ Full detail: [`docs/PROJECT-BRIEF.md`](docs/PROJECT-BRIEF.md) and the UI Kit's b
   - all 36 pages and the homepage audit, republished with links between pages repointed;
   - the UI Kit, rebuilt with its images re-uploaded.
 - **Website copy (EN and IT):** read-only pages, built from `docs/copy/*.md`. The Markdown is the version to edit; republish the pages after changes.
-- **Child theme:** written, but not yet installed or tested in WordPress. Use staging first.
+- **Child theme:** written, but not yet installed or tested in WordPress. Installing it on staging is the site owner's job, not Dani's.
 - **Open items** (copy to check, quote attribution, live-site fixes): see the brief.
 
 ## Repository
 
-- **Default branch:** `main`. The older branch `claude/whisper-website-redesign-oftg6o` holds the same commit and can be deleted once `main` is the default.
+- **Default branch:** `main`, the only long-lived branch. Work happens on short branches merged by pull request.
